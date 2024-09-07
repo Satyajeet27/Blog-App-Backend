@@ -60,7 +60,7 @@ export const loginUser = async (
       .setHeader("token", token)
       .send({
         message: "Logged in successfull",
-        token: config.env === "DEV" && token,
+        token,
       });
   } catch (error) {
     console.log(error);
