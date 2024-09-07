@@ -21,6 +21,12 @@ router.post("/login", validateUserLoginRequest, loginUser);
 router.get("/", authenticateUser, getUser);
 router.put(
   "/reset-password",
+  validateUpdateUserRequest,
+  authenticateUser,
+  updateUser
+);
+router.put(
+  "/reset-password",
   validatePasswordResetRequest,
   authenticateUser,
   resetPassword
